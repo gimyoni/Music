@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="<c:url value="/resources/css/style_result.css" />" rel="stylesheet">
+<title>음악 추가 성공</title>
+</head>
+<body>
+<h1>Add Result</h1>
+<h3>Title  : ${requestScope.song_title }</h3>
+<h3>Singer : ${requestScope.song_singer}</h3>
+<h3>Genre  : ${requestScope.song_genre }</h3>
+<h3>Price  : ${requestScope.song_price}</h3>
+<h3>PW     : ${requestScope.song_passwd }</h3>
+<h3>Date   : ${requestScope.song_date}</h3><br>
+<h3>음악 추가를 성공했습니다.</h3>
+</body>
+</html>

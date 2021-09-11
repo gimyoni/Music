@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="music">
+ 
+ 	<insert id="insert" parameterType="kr.hs.study.model.dto.MusicDTO">
+ 		<selectKey keyProperty="id" resultType="integer" order="BEFORE">
+			SELECT id.nextval from dual
+		</selectKey>
+		insert into music(song_title, song_singer, song_genre, song_price, song_passwd, song_date, id) values(#{song_title}, #{song_singer}, #{song_genre}, #{song_price}, #{song_passwd}, #{song_date}, #{id}) 
+ 	</insert>
+ 	
+ 	<select id="search" resultType="kr.hs.study.model.dto.MusicDTO">
+        SELECT * FROM music WHERE song_title=#{song_title}
+        <!-- id, song_title, song_singer, song_genre, song_price, song_passwd, song_date -->
+    </select>
+    
+ 	<select id="list" resultType="kr.hs.study.model.dto.MusicDTO">
+        SELECT * FROM music
+    </select>
+    
+    <delete id = "delete" parameterType="kr.hs.study.model.dto.MusicDTO">
+    	DELETE FROM music WHERE id = #{id}
+    </delete>
+    
+    <update id="modify">
+        UPDATE music
+        	SET song_title=#{song_title},
+        		song_singer=#{song_singer},
+        		song_genre=#{song_genre}, 
+        		song_price=#{song_price}, 
+        		song_passwd=#{song_passwd}, 
+        		song_date=#{song_date}
+        	WHERE ID=#{id}
+    </update>
+    
+</mapper>

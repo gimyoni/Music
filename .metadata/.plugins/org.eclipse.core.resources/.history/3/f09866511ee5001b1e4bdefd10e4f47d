@@ -1,0 +1,14 @@
+h1{
+	text-align: center;
+	padding: 10px 0;
+}
+table {
+	width: 70%;
+	border: 1px solid #444444;
+	border-collapse: collapse;
+	margin-left: 15%;
+}
+th, td {
+	border: 1px solid #444444;
+	padding: 10px;
+}

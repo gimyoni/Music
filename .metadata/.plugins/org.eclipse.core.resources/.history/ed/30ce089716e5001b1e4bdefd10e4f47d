@@ -1,0 +1,18 @@
+@charset "UTF-8";
+*{
+	text-decoration-line: none;
+}
+body{
+	margin: 0 auto;
+}
+#container{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+.do{
+	color: black;
+	text-align: center;
+	font-size: 24px;
+}

@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link href="<c:url value="/resources/css/add.css" />" rel="stylesheet">
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>음악 추가하기</title>
+</head>
+<body>
+	<form method="post" action="/add_result">
+		<h1>음악 추가하기</h1>
+		제목  : <input type="text" name="song_title"><br>
+		가수 : <input type="text" name="song_singer"><br>
+		장르  : <input type="text" name="song_genre"><br>
+		가격  : <input type="text" name="song_price"><br>
+		비밀번호    : <input type="password" name="song_passwd"><br>
+		발매년도   : <input type="text" name="song_date"><br>
+		<button type="submit">추가</button>
+	</form>
+</body>
+</html>

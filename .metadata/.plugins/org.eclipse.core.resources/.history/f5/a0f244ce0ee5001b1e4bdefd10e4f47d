@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="music">
+ 
+ 	<!-- 음악 추가 -->
+ 	<insert id="insert" parameterType="kr.hs.study.model.dto.MusicDTO">
+ 		<selectKey keyProperty="id" resultType="integer" order="BEFORE">
+			SELECT id.nextval from dual
+		</selectKey>
+		insert into music(song_title, song_singer, song_genre, song_price, song_passwd, song_date, id) values(#{song_title}, #{song_singer}, #{song_genre}, #{song_price}, #{song_passwd}, #{song_date}, #{id}) 
+ 	</insert>
+ 	
+ 	<!-- 음악 검색 -->
+ 	<select id="search" resultType="kr.hs.study.model.dto.MusicDTO">
+        SELECT * FROM music WHERE song_title=#{song_title}
+        <!-- id, song_title, song_singer, song_genre, song_price, song_passwd, song_date -->
+    </select>
+    
+    <!-- 음악 목록 -->
+ 	<select id="list" resultType="kr.hs.study.model.dto.MusicDTO">
+        SELECT * FROM music
+    </select>
+    
+</mapper>

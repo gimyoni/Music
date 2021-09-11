@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>음악 수정하기</title>
+</head>
+<body>
+	<%
+		String id = request.getParameter("id");
+		String song_title = request.getParameter("song_title");
+		String song_singer = request.getParameter("song_singer");
+		String song_genre = request.getParameter("song_genre");
+		String song_price = request.getParameter("song_price");
+		String song_passwd = request.getParameter("song_passwd");
+		String song_date = request.getParameter("song_date");
+	%>	
+	<%=song_title %>정보를 수정한 후 비밀번호를 입력해 저장하세요<br>
+	
+
+
+</body>
+</html>
